@@ -12,7 +12,7 @@ import { TarefasPage, Filtro } from '../pages/tarefas/tarefas';
 import {TarefaPage} from '../pages/tarefa/tarefa';
 import {ProjetoPage} from '../pages/projeto/projeto';
 import {TarefasService} from '../providers/projetos-service';
-import { LoginPage } from '../pages/login/login';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -20,7 +20,6 @@ import { LoginPage } from '../pages/login/login';
     ProjetosPage,
     TarefasPage,
     ProjetoPage,
-    LoginPage,
     TarefaPage,
     Filtro
   ],
@@ -36,8 +35,7 @@ import { LoginPage } from '../pages/login/login';
     ProjetosPage,
     TarefasPage,
     ProjetoPage,
-    TarefaPage,
-    LoginPage
+    TarefaPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,1 @@
+php -S 192.168.1.8:888 -t /home/larissa/public_html/api_rest /home/larissa/public_html/api_rest/index.php
