@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Tarefa
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label color="primary">
+                Descrição
+            </ion-label>
+            <ion-input type="text" placeholder="Descrição da Tarefa" [(ngModel)]="descricao" name="descricao" requerid #desc="ngModel"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary">
+                Projeto
+            </ion-label>
+            <ion-select [(ngModel)]="codigoProjeto">
+                <ion-option *ngFor="let p of projetos" value="{{p.codigo}}">
+                    {{p.projeto}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Data</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" min="2010" max="2030" [(ngModel)]="data"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary">Prioridade</ion-label>
+            <ion-select [(ngModel)]="prioridade">
+                <ion-option value="1">1 - Alta</ion-option>
+                <ion-option value="2">2 - Média</ion-option>
+                <ion-option value="3">3 - Baixa</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-card [hidden]="desc.valid || desc.pristine" class="alerta">
+            <ion-card-content>
+                Descrição  obrigatória!
+            </ion-card-content>
+        </ion-card>
+        <div class="btns">
+            <button ion-button round color="primary" (click)="alteraTarefa()" [disabled]="!desc.valid" [hidden]="novo">
+                <ion-icon name="checkmark"></ion-icon>
+            </button>
+            <button ion-button round color="danger" (click)="excluiTarefa()" [hidden]="novo">
+                <ion-icon name="trash"></ion-icon>
+            </button>
+            <button ion-button round color="primary" (click)="incluiTarefa()" [hidden]="!novo">
+             <ion-icon name="checkmark"></ion-icon>
+         </button>
+        </div>
+             
+    </ion-list>
+</ion-content>
